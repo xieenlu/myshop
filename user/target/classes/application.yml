@@ -1,0 +1,18 @@
+server:
+  port: 10005
+
+spring:
+  application:
+    name: ${SERVER_NAME:shop-user}
+  datasource:
+    url: jdbc:mysql://${DB_HOST:192.168.88.129}:${DB_PORT:3306}/${DB_DATABASE:bpo_esbmp}?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&useLegacyDatetimeCode=false&useTimezone=true&serverTimezone=Asia/Shanghai
+    username: ${DB_USER:root}
+    password: ${DB_PSWD:123456}
+
+eureka:
+  instance:
+    prefer-ip-address: ${INSTANCE_PREFER:true}
+  client:
+    serviceUrl:
+      # docker 部署开启
+      defaultZone: http://admin:123@127.0.0.1:7001/eureka/
